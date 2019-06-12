@@ -1,21 +1,60 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to our airport!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  <div>
+    <label style="color: green" *ngIf='!airport[3].state'>4: ...free... </label>
+    <label style="color: red" *ngIf='airport[3].state'>4: {{airport[3].craft}}</label>
+    <label *ngIf='airport[3].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[3].direction === 1'>&darr; </label>
+    <label style="color: green" *ngIf='!airport[2].state'>3: ...free... </label>
+    <label style="color: red" *ngIf='airport[2].state'>3: {{airport[2].craft}}</label>
+    <label *ngIf='airport[2].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[2].direction === 1'>&darr; </label>
+    <label style="color: green" *ngIf='!airport[1].state'>2: ...free... </label>
+    <label style="color: red" *ngIf='airport[1].state'>2: {{airport[1].craft}}</label>
+    <label *ngIf='airport[1].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[1].direction === 1'>&darr; </label>
+    <label style="color: green" *ngIf='!airport[0].state'>1: ...free...</label>
+    <label style="color: red" *ngIf='airport[0].state'>1: {{airport[0].craft}}</label>
+    <label *ngIf='airport[0].direction === 2'>&uarr;</label>
+    <label *ngIf='airport[0].direction === 1'>&darr;</label>
+    <br>
+    <label style="color: green" *ngIf='!airport[4].state'>5: ...free... </label>
+    <label style="color: red" *ngIf='airport[4].state'>5: {{airport[4].craft}}</label>
+    <label *ngIf='airport[4].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[4].direction === 1'>&darr; </label>
+    <label style="color: green" *ngIf='!airport[7].state'>8: ...free...</label>
+    <label style="color: red" *ngIf='airport[7].state'>8: {{airport[7].craft}}</label>
+    <label *ngIf='airport[7].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[7].direction === 1'>&darr; </label>
+    <br>
+    <label style="color: green" *ngIf='!airport[5].state'>6: ...free... </label>
+    <label style="color: red" *ngIf='airport[5].state'>6: {{airport[5].craft}}</label>
+    <label *ngIf='airport[5].direction === 2'>&uarr; </label>
+    <label *ngIf='airport[5].direction === 1'>&darr; </label>
+    <label style="color: green" *ngIf='!airport[6].state'>7: ...free...</label>
+    <label style="color: red" *ngIf='airport[6].state'>7: {{airport[6].craft}}</label>
+    <label *ngIf='airport[6].direction === 2'>&uarr;</label>
+    <label *ngIf='airport[6].direction === 1'>&darr;</label>
+    <br>
+  </div>
+<button (click)="startHttpRequest()">Get state of schedule</button>
+<ng-container *ngFor="let flight of schedule; index as i">
+  <li> 
+      <label>
+       {{flight.time}}
+      </label>
+      <label>
+          {{flight.number}}
+       </label>
+       <label style="color: green" *ngIf='flight.direction === 1'>
+        arrive
+      </label>
+      <label style="color: green" *ngIf='flight.direction === 2'>
+        depatrture
+      </label>
   </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+</ng-container>
 <router-outlet></router-outlet>
