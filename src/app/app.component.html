@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Welcome to our airport!
@@ -49,11 +48,11 @@
       <label>
           {{flight.number}}
        </label>
-       <label style="color: green" *ngIf='flight.direction === 1'>
+       <label style="color: blue" *ngIf='flight.direction === 1'>
         arrive
       </label>
-      <label style="color: green" *ngIf='flight.direction === 2'>
-        depatrture
+      <label style="color: blue" *ngIf='flight.direction === 2'>
+        departure
       </label>
   </li>
 </ng-container>

@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.signalRService.addTransferChartDataListener();   
     this.startHttpRequest();
   }
-  private startHttpRequest = () => {
+  public startHttpRequest = () => {
     this.http.get('https://localhost:44397/api/values/schedule')
       .subscribe(res => {
         this.schedule = res as Flight[];
