@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
     this.startHttpRequest();
   }
   public startHttpRequest = () => {
-    this.http.get('https://localhost:44397/api/values/schedule')
+    //https://localhost:44397/api/values/schedule'
+    this.http.get('https://localhost:5001/api/values/schedule')
       .subscribe(res => {
         this.schedule = res as Flight[];
       }

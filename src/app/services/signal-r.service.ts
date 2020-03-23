@@ -13,7 +13,7 @@ private hubConnection: signalR.HubConnection
  
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
-                            .withUrl('https://localhost:44397/hub/')
+                            .withUrl('https://localhost:5001/hub/')
                             .configureLogging({
                                 log: function(logLevel, message) {
                                     console.log(new Date().toISOString() + ": " + message);
