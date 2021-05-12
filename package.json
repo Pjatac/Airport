@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "^9.1.0-rc.0",
     "@angular/router": "^9.1.0-rc.0",
     "@aspnet/signalr": "^1.1.4",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.6.11",
     "express": "^4.17.1",
     "install": "^0.13.0",
